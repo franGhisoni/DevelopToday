@@ -76,8 +76,10 @@ export const getPopulation = async (code: string) => {
 export const getFullDetails = async (code: string) => {
     try {
         const flagInfo = await getFlag(code); 
-        const borderCountriesInfo = await getBorderCountries(code);
-        const populationInfo = await getPopulation(flagInfo.iso3); 
+        const [ borderCountriesInfo, populationInfo] = await Promise.all([
+            getBorderCountries(code),
+            getPopulation(flagInfo.iso3)
+        ]);
         
         return {
             code: code,
