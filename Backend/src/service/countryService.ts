@@ -43,7 +43,7 @@ export const getFlag = async (code: string) => {
             }
         }
         
-        return { flag: country.flag, name: country.name };
+        return { flag: country.flag, name: country.name, iso3:country.iso3 };
     } catch (error) {
         console.error('Error fetching flag:', error);
         throw new Error('Failed to fetch flag');
@@ -62,7 +62,7 @@ export const getPopulation = async (code: string) => {
         const country = response.data.data.find((country: any) => country.iso3 === code);
         
         if (!country) {
-            throw new Error(`Country with ISO3 code ${code} not found`);
+            throw new Error(`Country with ISO2 code ${code} not found`);
         }
         
         return { populationCounts: country.populationCounts, name: country.country };
@@ -76,14 +76,14 @@ export const getPopulation = async (code: string) => {
 export const getFullDetails = async (code: string) => {
     try {
         const flagInfo = await getFlag(code); 
-        const populationInfo = await getPopulation(code); 
         const borderCountriesInfo = await getBorderCountries(code);
+        const populationInfo = await getPopulation(flagInfo.iso3); 
         
         return {
             code: code,
             flag: flagInfo,
-            population: populationInfo,
             borderCountries: borderCountriesInfo,
+            population: populationInfo,
         };
     } catch (error) {
         console.error('Error fetching full details:', error);

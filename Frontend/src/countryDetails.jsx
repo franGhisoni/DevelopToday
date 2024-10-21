@@ -9,9 +9,9 @@ const CountryDetail = () => {
     useEffect(() => {
         const fetchCountryDetail = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/country/${code}/fullDetails`);
-                console.log(response)
+                const response = await axios.get(`http://localhost:3000/country/${code}`);
                 setCountryDetail(response.data);
+                console.log(response.data)
             } catch (error) {
                 console.error('Error fetching country details:', error);
             }
@@ -24,11 +24,30 @@ const CountryDetail = () => {
 
     return (
         <div className="container mx-auto p-6">
-            <h1 className="text-4xl font-bold mb-4">{countryDetail.name}</h1>
+            <h1 className="text-4xl font-bold mb-4">{countryDetail.borderCountries.commonName}</h1>
             <div className="flex flex-col space-y-4">
-                <img src={countryDetail.flag} alt={`${countryDetail.name} flag`} className="w-32 h-20" />
-                <p><strong>Population:</strong> {countryDetail.population}</p>
-                <p><strong>Border Countries:</strong> {countryDetail.borderCountries.join(', ')}</p>
+                <img src={countryDetail.flag.flag} alt={`${countryDetail.borderCountries.commonName} flag`} className="w-32 h-20" />
+                <p><strong>Population:</strong> </p>
+                <ul>
+                    {countryDetail.population.populationCounts.map((population) => (
+                        <li key={population.value}>
+                            {population.year}
+                            {population.value}
+                        </li>
+                    ))}
+                </ul>
+    
+                <p><strong>Border Countries:</strong></p>
+     
+
+
+                <ul>
+                    {countryDetail.borderCountries.borders.map((borderCountry) => (
+                        <li key={borderCountry.commonName}>
+                            {borderCountry.commonName}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     );

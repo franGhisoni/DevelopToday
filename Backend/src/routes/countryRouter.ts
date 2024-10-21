@@ -48,7 +48,7 @@ countryRouter.get('/:code/population', async (req, res) => {
 });
 
 
-countryRouter.get('/:code/fullDetails', async (req, res) => {
+countryRouter.get('/:code', async (req, res) => {
     const { code } = req.params;
     try {
         const countryInfo = await countryService.getFullDetails(code);

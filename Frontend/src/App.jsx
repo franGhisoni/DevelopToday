@@ -23,7 +23,8 @@ const App = () => {
         <div className="container mx-auto p-6">
             <h1 className="text-3xl font-bold mb-6">Countries</h1>
             <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {countries.map((country) => (
+                {countries.map((country) => 
+                (
                     <li key={country.countryCode} className="p-4 bg-gray-100 rounded-lg shadow">
                         <Link to={`/country/${country.countryCode}`} className="text-blue-500 hover:underline">
                             {country.name}
