@@ -34,10 +34,13 @@ export const getFlag = async (code: string) => {
             throw new Error(response.data.msg);
         }
         
-        const country = response.data.data.find((country: any) => country.iso3 === code);
+        let country = response.data.data.find((country: any) => country.iso3 === code);
         
         if (!country) {
-            throw new Error(`Country with ISO3 code ${code} not found`);
+            country = response.data.data.find((country: any) => country.iso2 === code);
+            if(!country) {
+                throw new Error(`Flag for country with code ${code} not found`)
+            }
         }
         
         return { flag: country.flag, name: country.name };
