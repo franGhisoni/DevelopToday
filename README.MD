@@ -1,85 +1,70 @@
-Country Explorer
-Country Explorer is a simple React application that displays a list of countries and provides detailed information about each one. It utilizes an external API to fetch country data, including information on bordering countries. This project uses React Router for navigation and Tailwind CSS for styling.
+# DevelopToday
 
-Table of Contents
-Features
-Installation
-Usage
-Dependencies
-Project Structure
-Contributing
-License
-Features
-Displays a list of countries fetched from an API.
-Allows users to click on a country name to view detailed information.
-Shows bordering countries for each selected country.
-Utilizes Tailwind CSS for responsive design and modern styling.
-Installation
-Prerequisites
-Make sure you have the following installed on your machine:
+## Description
 
-Node.js (v14 or higher)
-npm or yarn
-Setup
-Clone the repository:
+This is the frontend repository for the DevelopToday project. It features an application built with React and Tailwind CSS, providing a user interface for displaying and interacting with country data.
 
-bash
-Copiar código
-git clone https://github.com/your-username/country-explorer.git
-cd country-explorer
-Install dependencies:
+---
 
-bash
-Copiar código
-npm install
-or if you're using yarn:
+## Table of Contents
 
-bash
-Copiar código
-yarn install
-Start the development server:
+1. [Installation](#installation)
+2. [Running the Application](#running-the-application)
+3. [Setup and Configuration](#setup-and-configuration)
 
-bash
-Copiar código
+---
+
+## Installation
+
+### Prerequisites
+
+- Node.js (version 16.x or later) must be installed on your machine.
+- NPM or Yarn package manager.
+
+### Steps to Install
+
+1. Clone the repository to your local machine:
+
+    ```bash
+    git clone https://github.com/franGhisoni/DevelopToday.git
+    ```
+
+2. Navigate into the project directory:
+
+    ```bash
+    cd DevelopToday
+    ```
+
+3. Install the dependencies:
+
+    Using NPM:
+
+    ```bash
+    npm install
+    ```
+
+    Using Yarn:
+
+    ```bash
+    yarn install
+    ```
+
+---
+
+## Running the Application
+
+### Development Mode
+
+To run the app in development mode, execute the following command:
+
+```bash
 npm run dev
-or with yarn:
-
-bash
-Copiar código
+Or with Yarn:
 yarn dev
-Navigate to http://localhost:3000 in your browser to view the app.
 
-Usage
-On the homepage, you will see a grid of countries.
-Click on any country to view its detailed information, including the flag, population, and bordering countries.
-API Endpoints
-The app fetches data from the following API endpoints:
+The application will be available at http://localhost:3000. Any changes you make will automatically reload the page.
 
-List of countries: GET http://localhost:3000/country/
-Country details: GET http://localhost:3000/country/:code
-Make sure you have a backend service running at http://localhost:3000 that serves these endpoints.
 
-Dependencies
-React: A JavaScript library for building user interfaces.
-React Router: For handling navigation and routing between pages.
-Axios: For making HTTP requests to the API.
-Tailwind CSS: A utility-first CSS framework for responsive design and styling.
-Project Structure
-php
-Copiar código
-├── public              # Public assets
-│   └── index.html
-├── src
-│   ├── components      # Reusable components
-│   ├── pages           # Main pages (Country List, Country Details)
-│   ├── App.js          # Main app component
-│   ├── index.js        # Entry point of the React application
-│   └── index.css       # Tailwind CSS configuration and global styles
-├── README.md
-├── tailwind.config.js  # Tailwind CSS configuration
-└── package.json        # Project metadata and dependencies
-Contributing
-Contributions are welcome! If you find any issues or have feature requests, feel free to open an issue or submit a pull request.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+### Setup and Configuration
+## Environment Variables
+rename the  .env.example file in the project root and a port number:
