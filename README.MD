@@ -2,7 +2,7 @@
 
 ## Description
 
-This is the frontend repository for the DevelopToday project. It features an application built with React and Tailwind CSS, providing a user interface for displaying and interacting with country data.
+This is the repository for the DevelopToday project. It features an application built with React and Tailwind CSS, providing a user interface for displaying and interacting with country data from the backend in node express typescript.
 
 ---
 
@@ -62,7 +62,9 @@ npm run dev
 Or with Yarn:
 yarn dev
 
-The application will be available at http://localhost:3000. Any changes you make will automatically reload the page.
+in the back-end and the front-end
+
+The backend will be available at http://localhost:3000 and http://localhost:5173/ for the frontend
 
 
 ### Setup and Configuration
