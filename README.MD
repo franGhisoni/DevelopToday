@@ -32,7 +32,10 @@ This is the repository for the DevelopToday project. It features an application 
 2. Navigate into the project directory:
 
     ```bash
-    cd DevelopToday
+    cd DevelopToday/backend
+    ```
+     ```bash
+    cd DevelopToday/frontend
     ```
 
 3. Install the dependencies:
